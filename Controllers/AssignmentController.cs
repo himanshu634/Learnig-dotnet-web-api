@@ -31,9 +31,9 @@ namespace demo_api.Controllers
       public IActionResult Add(int first, int second){
          return Ok(first + second);
       }
-
-      [Route("multiply")]
+      
       [HttpPost]
+      [Route("multiply")]
       //!struggling with post
       public IActionResult Multiply(int first, int second){
          return Ok(first * second);

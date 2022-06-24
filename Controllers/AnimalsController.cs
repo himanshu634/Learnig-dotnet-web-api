@@ -47,8 +47,9 @@ namespace demo_api.Controllers {
          return Ok(animals.FirstOrDefault(x => x.id == id));
       }
 
-//!some error while passing animal object
-      [HttpPost("post")]
+      //!some error while passing animal object
+      [HttpPost("~/custom/post")]
+      // [Route("post")]
       public IActionResult AddAnimal(AnimalModel animal){
          //it is not passing animal object to AddAnimal
 
@@ -57,6 +58,7 @@ namespace demo_api.Controllers {
          //    id = 23,
          //    name = "from add animal",
          // };
+         Console.WriteLine("name : " + animal.name);
          animals.Add(animal);
 
 

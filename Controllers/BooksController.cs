@@ -7,8 +7,7 @@ namespace demo_api.Controllers {
    public class BooksController : ControllerBase {
 
       [Route("{id:int:min(10)}")] // type constraint
-
-            public string GetById(int id){
+      public string GetById(int id){
          return "Hello int" + id;
       }
 
