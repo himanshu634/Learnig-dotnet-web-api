@@ -26,20 +26,20 @@ namespace demo_api
 
          // app.Map("/himanshu", HandleHimanshu);
 
-         // app.UseMiddleware<CustomMiddleware1>();
+         app.UseMiddleware<CustomMiddleware1>();
 
-         // app.Use(async (context, next) => {
-         //    await context.Response.WriteAsync("hwllo from use 2 started watchin \n");
+         app.Use(async (context, next) => {
+            await context.Response.WriteAsync("hwllo from use 2 started watchin \n");
 
-         //    await next();
+            await next();
 
-         //    await context.Response.WriteAsync("Hwllo from return \n");
-         // });
+            await context.Response.WriteAsync("Hwllo from return \n");
+         });
 
-         // app.Run(async context =>
-         // {
-         //    await context.Response.WriteAsync("hwllo from run 2\n");
-         // });
+         app.Run(async context =>
+         {
+            await context.Response.WriteAsync("hwllo from run 2\n");
+         });
 
          if(env.IsDevelopment()){
             app.UseDeveloperExceptionPage();
